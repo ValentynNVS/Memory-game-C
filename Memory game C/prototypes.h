@@ -11,6 +11,18 @@ const int kMaxSizeOfChar = 200;
 const int kNumberOfRows = 4;
 const int kNumberOfElements = 5;
 
+struct icon {
+	char frontValue = '+';
+	int hiddenValue = 0;
+	int showImage = 0;
+};
+
+struct lineDefault {
+
+	struct icon iconStruct[kNumberOfElements];
+
+};
+
 /*fucntion to generate random numbers and store them*/
 int randomValueAssign(struct lineDefault* gameValues, int array[]);
 /*function to keep track of random number so they dont repeat themselfs more than twice*/
