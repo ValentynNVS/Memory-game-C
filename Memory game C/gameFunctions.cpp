@@ -12,7 +12,6 @@ Description: This function checks if a specific element in a specified row is al
 			 returns 0 indicating allowance.
 Return value: int : -1 if the element is not allowed, 0 if it is allowed
 */
-
 int checkAllowence(int row, int element, struct lineDefault* gameValues) {
 
 	if (gameValues[row].iconStruct[element].showImage == 1) {
@@ -25,7 +24,17 @@ int checkAllowence(int row, int element, struct lineDefault* gameValues) {
 
 }
 
-
+/*
+Function: randomValueAssign
+Parameters:
+	struct lineDefault* gameValues : a pointer to the game values structure
+	int arrayOfRandValues[] : an array to store the assigned random values
+Description: This function assigns random values to the hiddenValue field of the iconStruct
+			 in the gameValues structure. It ensures that each number between 0 and 9 is
+			 generated exactly twice. The assigned values are also stored in the
+			 arrayOfRandValues array.
+Return value: int : always returns 0
+*/
 int randomValueAssign(struct lineDefault* gameValues, int arrayOfRandValues[]) {
 
 
@@ -44,6 +53,16 @@ int randomValueAssign(struct lineDefault* gameValues, int arrayOfRandValues[]) {
 }
 
 
+/*
+Function: numberTracker
+Parameters:
+	int numberGenerated : the number to track in the array
+	int arrayOfRandNumbers[] : an array of generated random numbers
+Description: This function counts the occurrences of numberGenerated in the arrayOfRandNumbers array.
+			 If the number appears less than twice, the function returns 1 indicating it can be
+			 generated again; otherwise, it returns -1 indicating it should not be generated again.
+Return value: int : 1 if numberGenerated appears less than twice, -1 if it appears twice or more
+*/
 int numberTracker(int numberGenerated, int arrayOfRandNumbers[]) {
 
 	int count = 0;
