@@ -1,5 +1,18 @@
 #include "prototypes.h"
 
+/*
+Function: checkAllowence
+Parameters:
+	int row : the row index to check in the gameValues structure
+	int element : the element index within the specified row to check
+	struct lineDefault* gameValues : a pointer to the game values structure
+Description: This function checks if a specific element in a specified row is allowed by
+			 examining the showImage property in the iconStruct. If the showImage property
+			 is set to 1, the function returns -1 indicating disallowance; otherwise, it
+			 returns 0 indicating allowance.
+Return value: int : -1 if the element is not allowed, 0 if it is allowed
+*/
+
 int checkAllowence(int row, int element, struct lineDefault* gameValues) {
 
 	if (gameValues[row].iconStruct[element].showImage == 1) {
