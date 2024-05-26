@@ -139,6 +139,14 @@ int setToZero(int arrayToSet[], int lenght) {
 	return 0;
 }
 
+/*
+Function: stopTheProgram
+Parameters:
+	int lengthOfStop : the length of time, in milliseconds, to pause the program execution
+Description: This function pauses the program execution for the specified length of time
+			 using the Sleep function from the Windows API.
+Return value: int : always returns 0
+*/
 int stopTheProgram(int lenghtOfStop) {
 
 	Sleep(lenghtOfStop);
@@ -146,15 +154,19 @@ int stopTheProgram(int lenghtOfStop) {
 	return 0;
 }
 
-
+/*
+Function: closeIcons
+Parameters:
+	struct lineDefault* gameValues : a pointer to the game values structure
+	int arrayOfCompareValues[] : an array containing row and element indices of icons to be closed
+Description: This function sets the showImage property of the specified icons in the
+			 gameValues structure to 0, indicating that the icons should be hidden.
+Return value: int : always returns 0
+*/
 int closeIcons(struct lineDefault* gameValues, int arrayOfCompareValues[]) {
-
-
 
 	gameValues[arrayOfCompareValues[0]].iconStruct[arrayOfCompareValues[1]].showImage = 0;
 	gameValues[arrayOfCompareValues[2]].iconStruct[arrayOfCompareValues[3]].showImage = 0;
-
-
 
 	return 0;
 }
