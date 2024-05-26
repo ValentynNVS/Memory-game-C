@@ -75,7 +75,16 @@ int numberTracker(int numberGenerated, int arrayOfRandNumbers[]) {
 }
 
 
-
+/*
+Function: openTheIcon
+Parameters:
+	int row : the row index of the icon to be opened
+	int element : the element index of the icon to be opened
+	struct lineDefault* gameValues : a pointer to the game values structure
+Description: This function sets the showImage property of the specified icon
+			 in the gameValues structure to 1, indicating that the icon should be shown.
+Return value: int : always returns 0
+*/
 int openTheIcon(int row, int element, struct lineDefault* gameValues) {
 
 	gameValues[row - 1].iconStruct[element - 1].showImage = 1;
@@ -84,6 +93,19 @@ int openTheIcon(int row, int element, struct lineDefault* gameValues) {
 	return 0;
 }
 
+/*
+Function: storeValuesForArray
+Parameters:
+	int arrayOfValues[] : an array to store the user-specified row and element values
+	int userRow : the row index specified by the user
+	int userElement : the element index specified by the user
+	int count : the count indicating which set of values to store (0 or 1)
+Description: This function stores the user-specified row and element values into the
+			 arrayOfValues array. If count is 0, the values are stored at the first two
+			 positions of the array. If count is 1, the values are stored at the third
+			 and fourth positions of the array.
+Return value: int : always returns 0
+*/
 int storeValuesForArray(int arrayOfValues[], int userRow, int userElement, int count) {
 
 	if (count == 0) {
@@ -99,6 +121,14 @@ int storeValuesForArray(int arrayOfValues[], int userRow, int userElement, int c
 	return 0;
 }
 
+/*
+Function: setToZero
+Parameters:
+	int arrayToSet[] : an array whose elements are to be set to zero
+	int length : the length of the array
+Description: This function sets all elements of the arrayToSet array to zero.
+Return value: int : always returns 0
+*/
 int setToZero(int arrayToSet[], int lenght) {
 
 	for (int i = 0; i < lenght; i++) {
