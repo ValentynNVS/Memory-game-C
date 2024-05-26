@@ -171,6 +171,18 @@ int closeIcons(struct lineDefault* gameValues, int arrayOfCompareValues[]) {
 	return 0;
 }
 
+/*
+Function: compareValuesOfIcons
+Parameters:
+	struct lineDefault* gameValues : a pointer to the game values structure
+	int arrayOfCompareValues[] : an array containing row and element indices of two pairs of icons to compare
+Description: This function compares the hidden values of two pairs of icons specified by the
+			 arrayOfCompareValues array. If the hidden values match, the showImage property
+			 of both icons in each pair is set to 1, indicating that the icons should be shown.
+			 Returns 1 if the values match, indicating a successful comparison; otherwise,
+			 returns 0.
+Return value: int : 1 if the hidden values of the icons match, 0 otherwise
+*/
 int compareValuesOfIcons(struct lineDefault* gameValues, int arrayOfCompareValues[]) {
 
 	if (gameValues[arrayOfCompareValues[0]].iconStruct[arrayOfCompareValues[1]].hiddenValue == gameValues[arrayOfCompareValues[2]].iconStruct[arrayOfCompareValues[3]].hiddenValue) {
@@ -187,6 +199,18 @@ int compareValuesOfIcons(struct lineDefault* gameValues, int arrayOfCompareValue
 
 }
 
+/*
+Function: isIntegerRow
+Parameters:
+	const char* str : the input string to be converted to an integer
+Description: This function attempts to convert the input string to an integer using atoi.
+			 It then checks if the result is within the range of 0 to 4 inclusive. If the
+			 input string is "0" or atoi fails to convert it to an integer, the function
+			 returns -1. If the result is within the specified range, it returns the
+			 converted integer.
+Return value: int : the converted integer if successful and within the range 0 to 4,
+			 otherwise -1
+*/
 int isIntegerRow(const char* str) {
 	int result = atoi(str);
 
@@ -203,6 +227,18 @@ int isIntegerRow(const char* str) {
 	return -1;
 }
 
+/*
+Function: isIntegerElement
+Parameters:
+	const char* str : the input string to be converted to an integer
+Description: This function attempts to convert the input string to an integer using atoi.
+			 It then checks if the result is within the range of 0 to 5 inclusive. If the
+			 input string is "0" or atoi fails to convert it to an integer, the function
+			 returns -1. If the result is within the specified range, it returns the
+			 converted integer.
+Return value: int : the converted integer if successful and within the range 0 to 5,
+			 otherwise -1
+*/
 int isIntegerElement(const char* str) {
 	int result = atoi(str);
 
@@ -219,6 +255,17 @@ int isIntegerElement(const char* str) {
 	return -1;
 }
 
+/*
+Function: displayGrid
+Parameters:
+	struct lineDefault* gameValues : a pointer to the game values structure
+Description: This function displays the grid of icons stored in the gameValues structure.
+			 It iterates through each row and element of the grid, printing either the
+			 hidden value or the front value of each icon based on the showImage property.
+			 If showImage is 1, it prints the hidden value; if it is 0, it prints the front
+			 value. It then moves to the next row.
+Return value: int : always returns 0
+*/
 int displayGrid(struct lineDefault* gameValues) {
 
 	for (int row = 0; row < kNumberOfRows; row++) {
