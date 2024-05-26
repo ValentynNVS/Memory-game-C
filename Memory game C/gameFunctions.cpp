@@ -289,7 +289,15 @@ int displayGrid(struct lineDefault* gameValues) {
 }
 
 
-/*function to take off the last new line charachter that adds automaticly with fgets*/
+/*
+Function: takeOffNewlineChar
+Parameters:
+	char* string : the string from which to remove the last newline character
+Description: This function removes the last newline character ('\n') from the input string,
+			 which is automatically added by fgets when reading input. It modifies the input
+			 string in place. If the string is empty, no action is taken.
+Return value: int : always returns 0
+*/
 int takeOffNewlineChar(char* string) {
 
 	size_t len = strlen(string);
@@ -302,10 +310,7 @@ int takeOffNewlineChar(char* string) {
 
 	return 0;
 }
-int openedIconsChecker(int row, int element) {
 
-	return 0;
-}
 
 /*clears the screen*/
 void clearScreen() {
