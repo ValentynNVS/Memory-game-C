@@ -37,8 +37,6 @@ int openTheIcon(int row, int element, struct lineDefault* gameValues);
 int stopTheProgram(int lenghtOfStop);
 /*this function compare the values of number and if they are the same the user gets a point*/
 int compareValuesOfIcons(struct lineDefault* gameValues, int arrayOfCompareValues[]);
-/*the fucntion to check if the users choice of the icon has not been opened yet*/
-int openedIconsChecker(int row, int element);
 /*checks if the input is a number*/
 int isIntegerRow(const char* str);
 int isIntegerElement(const char* str);

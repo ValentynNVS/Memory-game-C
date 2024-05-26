@@ -312,7 +312,13 @@ int takeOffNewlineChar(char* string) {
 }
 
 
-/*clears the screen*/
+/*
+Function: clearScreen
+Description: This function clears the console screen. On Windows systems, it calls the
+			 "cls" command using the system function. On Unix-like systems (including
+			 Linux and macOS), it calls the "clear" command using the system function.
+Return type: void
+*/
 void clearScreen() {
 
 #ifdef _WIN32
